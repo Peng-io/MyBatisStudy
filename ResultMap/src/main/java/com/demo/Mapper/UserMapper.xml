@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace= 绑定一个对应的DAO/mapper接口-->
+<mapper namespace="com.demo.Mapper.UserMapper">
+    
+    <resultMap id="UserMap" type="User">
+        <!-- column是数据库表的列名 , property是对应实体类的属性名 -->
+        <result column="password" property="pwd"/>
+    </resultMap>
+    <!--    id= 对应接口里的方法名-->
+    <!--    resultType= 结果集类型-->
+    <select id="selectUser" resultMap="UserMap">
+        select *
+        from user
+    </select>
+    <!--    parameterType=  参数类型-->
+    <select id="selectUserById" parameterType="String" resultMap="UserMap">
+        select *
+        from user
+        where id = #{id}
+    </select>
+</mapper>
