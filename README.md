@@ -1,4 +1,4 @@
-# mybatis 学习
+# mybatis 学习笔记
 
 ## Maven静态资源过滤问题
 
